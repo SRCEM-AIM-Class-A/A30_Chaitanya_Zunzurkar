@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time-Pass Game</title>
+    <style>
+      .container {
+        border: 2px solid black;
+        width: 50vw;
+        margin: auto;
+        text-align: center;
+        background-color: rgb(159, 238, 159);
+      }
+
+      button {
+        width: 10em;
+        font-weight: bold;
+        background-color: rgb(255, 217, 0);
+        border-radius: 15px;
+        border: none;
+      }
+      button:active {
+        background-color: rgb(215, 161, 22);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h3 id="startStatement">Want to play a round ?</h3>
+      </div>
+      <div class="text">
+        <p id="text1"><b>Cards: </b></p>
+        <p id="text2"><b>Sum : </b></p>
+      </div>
+      <div class="button">
+        <button type="button" onclick="startGame('startBtn')">
+          Start Game
+        </button>
+        <button type="button" onclick="renderGame('newCardBtn')">
+          New Card
+        </button>
+        <button type="button" onclick="reset()">Reset</button>
+      </div>
+
+      <p class="resultPara"><b id="result"></b></p>
+    </div>
+    <script>
+      let min = 0;
+      let max = 21;
+      let firstCard = Math.floor(Math.random() * 11) + 1 ;
+      let secondCard = Math.floor(Math.random() * 11) + 1 ;
+      let sum = firstCard + secondCard;
+
+      function reset()
+      {
+        document.getElementById("startStatement").innerHTML =
+            "Want to Start again ?"; 
+
+            document.getElementById("text1").innerHTML = " Cards : ";
+
+          document.getElementById("text2").innerHTML = "Sum : ";
+          document.getElementById("text1").style.fontWeight = "bold"
+          document.getElementById("text2").style.fontWeight = "bold"
+          document.getElementById("result").innerHTML =
+            "";
+      }
+
+      function startGame(action) {
+        if (action == "startBtn") {
+          document.getElementById("startStatement").innerHTML =
+            "Do you want to pick a Card ?";
+          document.getElementById("text1").innerHTML +=
+            firstCard + " " + secondCard;
+          document.getElementById("text2").innerHTML += sum;
+         } 
+        else if (action == "newCardBtn") {
+          let thirdCard =  Math.floor(Math.random() * 11) + 1 ;
+
+          document.getElementById("text1").innerHTML += " " + thirdCard;
+          document.getElementById("text2").innerHTML = " Sum : "
+          document.getElementById("text2").style.fontWeight = "bold"
+          sum += thirdCard;
+          document.getElementById("text2").innerHTML += sum;
+        }
+
+        if (sum === 21) {
+          document.getElementById("result").innerHTML =
+            "You have won the Game.";
+            
+        } else if (sum < 21) {
+          document.getElementById("result").innerHTML =
+            "You are still in the game. Please Pick one more Card.";
+        } else {
+          document.getElementById("result").innerHTML =
+            "You are out from the Game.";
+           
+        }
+      }
+      function renderGame(action) {
+        startGame(action);
+      }
+      
+      // function generateRandomNumber()
+      // {
+      //   return  Math.floor(Math.random() * 11) + 1 ;
+      // }
+    </script>
+  </body>
+</html>

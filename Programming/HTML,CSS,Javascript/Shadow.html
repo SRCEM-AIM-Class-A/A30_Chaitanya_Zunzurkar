@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow of an element</title>
+    <style>
+        .box{
+            padding: 25px;
+            box-sizing: border-box;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            box-shadow:inset 5px 5px rgb(165, 199, 113) ;
+            margin: 50px;
+            border-radius: 15px;
+        }
+        .reset{
+            background-color: rgb(237, 13, 9);
+            border-radius: 15px;
+            box-shadow: 2px 2px rgb(235, 27, 27) ;
+        }
+        .submit{
+            background-color: yellowgreen;
+            border-radius: 15px;
+            box-shadow: 2px 2px rgb(137, 160, 103) ;
+        }
+        button:hover{
+            /* background-color: pink; */
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button type="button" class="submit">Submit</button>
+    </div>
+    <div class="box">
+        <button type="button" class="reset">Reset</button>
+    </div>
+</body>
+</html>

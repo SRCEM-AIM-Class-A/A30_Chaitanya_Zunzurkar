@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Express | Sigma Wed Development</title>
+    <style>
+      .img img {
+        height: 150px;
+      }
+      .box {
+        border: 2px solid black;
+        width: 61vw;
+        padding: 5px 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .capsule {
+        position: absolute;
+        right: 4px;
+        background-color: black;
+        color: white;
+        z-index: 10;
+        width: 20%;
+        height: 15%;
+        display: flex;
+        justify-content: center;
+        border-radius: 7px;
+        align-items: center;
+        bottom: 6px;
+      }
+      .img {
+        position: relative;
+        /* border: 2px solid black; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="img">
+          <img src="/images/Screenshot 2023-11-26 142423.png" alt="" />
+          <div class="capsule">
+            <p>31.34</p>
+          </div>
+        </div>
+        <div class="text">
+          <h1>Introduction to Express | Sigma Wed Development</h1>
+          <p>CodeWithHarry . 756K . 2 months ago</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function createCard(title ,ChannelName,Views,timeago,duration,thumbnail) {
+      let views;
+      if (Views < 1000) {
+        views = Views;
+      } else if (Views > 100000 && Views < 1000000) {
+        views = Views / 10000 + "K";
+      } else if (Views > 1000000) {
+        views = Views / 1000000 + "M";
+      }
+      let html = `
+          <div class="box">
+            <div class="img">
+              <img src=${thumbnail}
+            </div>  
+            <div class="capsule">
+              <p>${duration}</p>
+            </div>
+          </div>
+
+          <div class="text">
+            <h1>${title}</h1>
+            <p>${ChannelName} . ${views} . ${timeago} months ago</p>
+          </div>`;
+
+        document.querySelector(".container").innerHTML = document.querySelector(".container").innerHTML + html
+
+    
+    console.log("javascript running sucessfully");
+
+    // function createCard(title, cName, views, monthsOld, duration, thumbnail) {
+    // // Finish this function
+    // let viewStr
+    // if (views < 1000) {
+    //     viewStr = views;
+    // }
+    // else if (views > 1000000) {
+    //     viewStr = views / 1000000 + "M";
+    // }
+    // else {
+    //     viewStr = views / 1000 + "K";
+    // }
+    // let html = `<div class="card">
+    // <div class="image">
+    //     <img src="${thumbnail}"
+    //         alt="">
+    //     <div class="capsule">${duration}</div>
+    // </div>
+    // <div class="text">
+    //     <h1>${title}</h1>
+    //     <p>${cName} . ${viewStr} views . ${monthsOld} months ago</p>
+    // </div> 
+// </div>`
+
+    // document.querySelector(".container").innerHTML = document.querySelector(".container").innerHTML + html
+}
+
+
+createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry", 560000, 7, "31:22", "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw")
+
+createCard("Finally my first Javascrpit code have been runned sucessfullly", "Focus",233333000, 9,"23:23","https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw") 
+
+  </script>
+</html>

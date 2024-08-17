@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food Train</title>
+<style>
+    body {
+     
+      font-family: sans-serif;
+      
+    }
+
+h1 {
+font-size: 2em;
+text-align: center;
+}
+h2{
+    text-align:center ;
+}
+
+p {
+font-size: 1em;
+}
+
+img {
+width: 100%;
+height: auto;
+}
+
+ul {
+list-style-type: none;
+padding: 10;
+margin: 10;
+}
+
+li {
+display: inline-block;
+padding: 0 1em;
+}
+nav {
+  
+  color: #fff;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 15px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color:rgb(14, 13, 14);
+}
+p {
+  font-size: 1.5em;
+  font-family: sans-serif;
+  color: #080808;
+  padding: 10px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 5px;
+}
+form {
+  margin: 0 auto;
+  width: 500px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+</style>
+</head>
+
+
+
+<body>
+<h1>Food Train</h1>
+<hr>
+<nav>
+    <a href="#">About</a>
+    <a href="#">Menu</a>
+    <a href="#">Contact</a>
+    <a href="#">Order Now</a>
+</nav>
+<hr>
+<p>Welcome to Food Train! We serve the best food in town.</p> 
+<p>Food Train is a family-owned and operated restaurant that has been serving the community for over 20 years. We offer a wide variety of dishes, including pizza, pasta, burgers, and seafood. We also have a full bar with a wide selection of drinks.
+Our restaurant is known for its friendly and welcoming atmosphere. We are committed to providing our customers with a great dining experience.</p>
+<hr>
+
+<h2>Menu</h2>
+<table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pizza</td>
+        <td>199 Rs.</td>
+      </tr>
+      <tr>
+        <td>Pasta</td>
+        <td>150 Rs.</td>
+      </tr>
+      <tr>
+        <td>Burger</td>
+        <td>199 Rs.</td>
+      </tr>
+      <tr>
+        <td>Indian</td>
+        <td>399 Rs.</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <hr>
+  <h2>Order Now</h2>
+  <form>
+    <input type="text" name="customer_name" placeholder="Customer Name">
+    <input type="text" name="customer_address" placeholder="Customer Address">
+    <input type="text" name="customer_location" placeholder="Customer Location">
+    <select name="menu_item">
+        <option value="Order">--Select Your Order--</option>
+      <option value="pizza">Pizza</option>
+      <option value="pasta">Pasta</option>
+      <option value="burger">Burger</option>
+      <option value="seafood">Indian</option>
+    </select>
+    <input type="number" name="cost" placeholder="Cost">
+    <button type="submit">Order Now</button>
+  </form>
+    <br>
+    <hr>
+    <h2>Contact Us</h2>
+  <form action="/contact" method="post">
+    <input type="text" name="name" placeholder="Your Name">
+    <input type="email" name="email" placeholder="Your Email">
+   
+    <input name="message" placeholder="Your Message"></inpupt>
+   <br>
+    <button type="submit">Send Message</button>
+  </form>
+  
+</body>
+</html>

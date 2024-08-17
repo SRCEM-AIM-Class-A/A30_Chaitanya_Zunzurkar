@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body id="body">
+    <h1 align="center" id="title">This is light mode</h1>
+    <button type="button" id="modeBtn" onclick="Mode()">Mode</button>
+
+    <script>
+       let lightMode = document.getElementById("body").style.backgroundColor = "white";
+       let darkMode = document.getElementById("body").style.backgroundColor = "black";
+
+       let mode = document.getElementById("body").style.backgroundColor = "white";
+       function Mode(){
+           if(mode === lightMode){
+                mode = document.getElementById("body").style.backgroundColor = "black";
+                document.getElementById("title").innerHTML = " This is dark mode.";
+                document.getElementById("title").style.color = "white"
+            }
+            else if (mode === darkMode){
+                mode = document.getElementById("body").style.backgroundColor = "white";
+                document.getElementById("title").innerHTML = " This is light mode.";
+                document.getElementById("title").style.color = "black"
+            }
+        }
+        // let action = document.getElementById("modeBtn")
+        // action.addEventListener("click" , Mode());
+
+    </script>
+</body>
+</html>

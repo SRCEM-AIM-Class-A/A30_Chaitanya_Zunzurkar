@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+
+    <style>
+      * {
+        margin: 0px;
+      }
+      .contanier {
+        position: relative;
+        height: 80vh;
+        width: 80vw;
+        background-color: aqua;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        animation: BouncingBall;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function:ease-out;
+      }
+
+      @keyframes BouncingBall {
+        12.5%{
+            transform: translateY(-400px) translateX(100px);    
+        }
+        25%{
+            transform: translateY(0px) translateX(200px);    
+        }
+        37.5%{
+            transform: translateY(-400px) translateX(300px);    
+        }
+        50%{
+            transform: translateY(0px) translateX(400px);    
+        }
+        62.5%{
+            transform: translateY(-400px) translateX(500px);   
+        }
+        75%{
+            transform: translateY(0px) translateX(600px);    
+        }
+        87.5%{
+            transform: translateY(-400px) translateX(700px);    
+        }
+        100%{
+            transform: translateY(0px) translateX(800px);    
+        }    
+    }
+    </style>
+  </head>
+  <body>
+    <div class="contanier">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

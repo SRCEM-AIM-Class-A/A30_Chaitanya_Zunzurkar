@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Menu</title>
+
+    <style>
+        /* Your CSS styles remain unchanged */
+
+        .navbar ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #navbar ul li {
+            padding: 0px 30px 0px 30px;
+        }
+
+        #menubtn {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            width: 10%;
+            justify-content: center;
+            align-items: center;
+            height: 10%;
+        }
+
+        .box {
+            width: 20px;
+            height: 3px;
+            background-color: black;
+            margin: 1px;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            display: flex;
+            border: 2px solid black;
+            width: 90%;
+            height: 10%;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #container {
+            display: flex;
+            border: 2px solid black;
+            justify-content: space-between;
+            width: 90vw;
+            height: 90vh;
+            z-index: -1;
+            position: relative;
+        }
+
+        #menubar {
+            background-color: black;
+            color: white;
+            height: 80vh;
+            width: 9.5vw;
+            position: absolute;
+            top: 10.5%;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            /* display: none; */
+        }
+
+        #navbar ul {
+            display: flex;
+        }
+
+        #menubtn:hover {
+            cursor: pointer;
+            background-color: red;
+        }
+
+        .menubarVisible {
+            display: flex !important;
+        }
+
+        .menubarHidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Setting</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <button type="button" id="menubtn">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </button>
+        <div id="menubar" class="menubarHidden">
+            <ul>
+                <li style="height: 45px;width: 45px;"><a href="#">Home</a></li>
+                <li style="height: 45px;width: 45px;"><a href="#">About</a></li>
+                <li style="height: 45px;width: 45px;"><a href="#">Contact</a></li>
+                <li style="height: 45px;width: 45px;"><a href="#">Setting</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+
+        //     let menuBar = document.getElementById("menubar");
+        //     let menuBtn = document.getElementById("menubtn");
+        //     let container = document.getElementById("container");
+
+        //     menuBtn.addEventListener("click", toggleMenu);
+        //     container.addEventListener("click", hideMenu);
+
+        //     menuBar.style.display = "none";
+
+        //     function toggleMenu() {
+        //         if (menuBar.style.display !== "none") {
+        //             menuBar.style.display = "none";
+        //         } else {
+        //             menuBar.style.display = "flex";
+        //             container.style.background = "rgba(0, 102, 199, 1)";
+        //         }
+        //     }
+
+        //     function hideMenu() {
+        //         if (menuBar.style.display === "flex") {
+        //             menuBar.style.display = "none";
+        //             container.style.background = "lightblue";
+        //         }
+        //     }
+        // });
+    </script>
+</body>
+</html>

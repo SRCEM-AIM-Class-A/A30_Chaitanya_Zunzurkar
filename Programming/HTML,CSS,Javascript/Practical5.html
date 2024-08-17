@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 5 : Form Validation</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    form {
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #d4caca;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      width: 45%;
+      cursor: pointer;
+    }
+    .registrationButton{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #gender{
+      display: flex;
+      margin: 10px;
+    }
+    .About{
+      margin: 5px;
+    }
+    
+  </style>
+</head>
+<body>
+  <form id="registrationForm" onsubmit="validateForm(event)">
+    <h1 align="center">Registration Form</h1>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+    <span id="usernameError" class="error"></span>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+    <span id="nameError" class="error"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <span id="emailError" class="error"></span>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <span id="passwordError" class="error"></span>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" rows="4">
+    <span id="addressError" class="error"></span>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+      <option value="" disabled selected>-- Please Select a country--</option>
+      <option value="India">India</option>
+      <option value="Russia">Russia</option>
+      <option value="China">China</option>
+      <option value="Canada">Canada</option>
+      <option value="USA">United States</option>
+      <option value="UK">United Kingdom</option>
+    </select>
+    <br >
+    <br >
+    <label for="fZipCode">Zip Code :</label>
+    <input  type="text" id="zip" name="zip" pattern="[0-9a-zA-Z]+"title="Alphanumeric characters only"required name="ZipCode">
+    <br>
+    <div id="gender">
+        <label for="genderRatioMale">Male:</label>
+        <input type="radio" id="genderRatioMale" name="genderRatio" value="male">
+        <label for="genderRatioFemale">Female:</label>
+        <input type="radio" id="genderRatioFemale" name="genderRatio" value="female">
+        <label for="genderRatioOther">Other:</label>
+        <input type="radio" id="genderRatioOther" name="genderRatio" value="other">     
+    </div>
+    <div class="About">
+      <label>About:</label>
+      <textarea name="About" id="About" cols="50" rows="10" ></textarea>
+    </div>
+    
+    <div class="registrationButton">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+
+  <script> 
+    function validateform() 
+    { 
+    var name=document.myform.name.value; 
+    var password=document.myform.password.value; 
+    if (name==null || name=="") 
+    { 
+    alert("Name can't be blank"); 
+    return false; 
+    } 
+    else if(password.length<6) 
+    { 
+    alert("Password must be at least 6 characters long."); 
+    return false; 
+    } 
+
+
+    function matchpass() 
+    { 
+    var firstpassword=document.f1.password.value; 
+    var secondpassword=document.f1.password2.value; 
+    if(firstpassword==secondpassword) 
+    { 
+    return true; 
+    } 
+    Else 
+    { 
+    alert("password must be same!"); 
+    return false; 
+    } 
+
+
+    function userid_validation(uid,mx,my) 
+    { 
+    var uid_len = uid.value.length; 
+    if (uid_len == 0 || uid_len >= my || uid_len < mx) 
+    { 
+    alert("User Id should not be empty / length be between "+mx+" to "+my); 
+    uid.focus(); 
+    return false; 
+    } 
+    return true; 
+    } 
+
+
+    function passid_validation(passid,mx,my) 
+    { 
+    var passid_len = passid.value.length; 
+    if (passid_len == 0 ||passid_len >= my || passid_len < mx) 
+    { 
+    alert("Password should not be empty / length be between "+mx+" to "+my); 
+    passid.focus(); 
+    return false; 
+    } 
+    return true; 
+    } 
+
+    function userid_validation(uid,mx,my) 
+    { 
+    var uid_len = uid.value.length; 
+    if (uid_len == 0 || uid_len >= my || uid_len < mx) 
+    { 
+    alert("User Id should not be empty / length be between "+mx+" to "+my); 
+    uid.focus(); 
+    return false; 
+    } 
+    return true; 
+    } 
+
+    function passid_validation(passid,mx,my) 
+    { 
+    var passid_len = passid.value.length; 
+    if (passid_len == 0 ||passid_len >= my || passid_len < mx) 
+    { 
+    alert("Password should not be empty / length be between "+mx+" to "+my); 
+    passid.focus(); 
+    return false; 
+    } 
+    return true; 
+    }
+
+    function alphanumeric(uadd) 
+    {  
+    var letters = /^[0-9a-zA-Z]+$/; 
+    if(uadd.value.match(letters)) 
+    { 
+    return true; 
+    } 
+    else 
+    { 
+    alert('User address must have alphanumeric characters only'); 
+    uadd.focus(); 
+    return false; 
+    } 
+    }
+
+
+    function countryselect(ucountry) 
+    { 
+    if(ucountry.value == "Default") 
+    { 
+    alert('Select your country from the list'); 
+    ucountry.focus(); 
+    return false; 
+    } 
+    else 
+    { 
+    return true; 
+    } 
+    } 
+
+
+    function allnumeric(uzip) 
+    {  
+    var numbers = /^[0-9]+$/; 
+    if(uzip.value.match(numbers)) 
+    { 
+    return true; 
+    } 
+    else 
+    { 
+    alert('ZIP code must have numeric characters only'); 
+    uzip.focus(); 
+    return false; 
+    } 
+    } 
+
+
+    function ValidateEmail(uemail) 
+    { 
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+    if(uemail.value.match(mailformat)) 
+    { 
+    return true; 
+    } 
+    else 
+    { 
+    alert("You have entered an invalid email address!"); 
+    uemail.focus(); 
+    return false; 
+    } 
+    } 
+
+    function validGender(mGen, fGen) 
+    { 
+    x=0; 
+    if(mGen.checked)  
+    { 
+    x++; 
+    } 
+    if(fGen.checked) 
+    { 
+    x++;  
+    } 
+    if(x==0) 
+    { 
+    alert('Select Male/Female'); 
+    mGen.focus(); 
+    return false; 
+    } 
+    else 
+    { 
+    alert('Form Successfully Submitted'); 
+    window.location.reload() 
+    return true; 
+    } 
+
+
+</script>
+    
+</body>
+
+</html>
